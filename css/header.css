@@ -1,0 +1,37 @@
+.header {
+  max-width: 1200px; /*obs*/
+  padding: 40px 20px; /*desgruda os elementos dos cantos*/
+  margin: 0 auto; /*obs*/
+  display: flex;
+  justify-content: space-between; /*leva o menu link para a conto direito superior*/
+  align-items: center; /*alinha os itens ao centro*/
+}
+
+.header-menu {
+  display: flex;
+  flex-wrap: wrap; /*quebra o menu ao diminuir a página (respossivo)*/
+  gap: 10px; /*espaçamente entre o menu*/
+  justify-content: center; /*coloca o menu alinhando sempre ao centro em coluna quando quebrar*/
+}
+
+.header-menu a {
+  font-size: 1.125rem;
+  line-height: 1.3; /*altura de linha*/
+  padding: 10px 20px; /*para aumentar a area de clique do link*/
+  text-decoration: none; /*retira o sublinhado do link*/
+  color: #141414;
+  display: block; /*para pegar nromalmente os valores de padding*/
+}
+
+@media (max-width: 800px) { /*determina que quando a tela ficar menor 800px o mwnu quebre*/ 
+  .header {
+    flex-direction: column; /*define o manu link como coluna, deixando o menu abaixo da marca*/
+    gap: 40px; /*para criar uma distancia entre marca e menu quando quebrar*/
+    padding: 20px; /*para colocar a marca a 20px do topo da pagina*/
+  }
+  .header a {
+    background: #f5f5f5;
+    border-radius: 4px;
+  }
+
+}

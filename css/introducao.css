@@ -1,0 +1,67 @@
+.introducao {
+  max-width: 1200px;
+  padding: 40px 20px; /*deslocar 20px da esquerda e 40px do grid superior*/
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr; /*Define as colunas e os mamanhos delas*/
+  gap: 100px; /*para dar distancia do texta para a imagem*/
+  align-items: center; /*coloca o conteudo (texto) alinhado ao centro*/
+}
+
+.introducao h1 {
+  font-size: 4.5rem; /*tamanho da fonte do texto*/
+  line-height: 1.125; /*Esse valor vai multiplicar com fonte size acima, para definir o texto*/
+  margin-bottom: 30px; /*define uma distancia dos outros elementos*/
+  position: relative; /*para que a imagem abaixo fique ao topo*/ 
+}
+
+.introducao h1::before {
+  content: ""; /*não coloca nada pois aparece na pagina*/
+  display: block;
+  width: 130px;
+  height: 100px;
+  background: url('../img/detalhe.svg') no-repeat center; 
+  position: absolute;
+  top: -15px;
+  left: -40px;
+  z-index: -1; /*coloca o elemento (detalhe) para atras do texto*/
+}
+
+.introducao p { 
+  font-size: 1.5rem;
+  color: #525252;
+}
+
+@media (max-width: 1000px) { /*Definição de prontos de quebra*/
+  .introducao h1 {
+    font-size: 3rem; /*Diminuiu o tamanho da tipografia texto quando tela menor 1000px*/
+
+  }
+
+}
+
+@media (max-width: 800px) {    /*Definição de prontos de quebra*/
+  .introducao {
+    grid-template-columns: 1fr 1fr; /*faz a quebra da imagem com o texto sejam propocionais*/
+    gap: 40px;
+  }
+  .introducao h1 {
+      font-size: 2rem; /*Diminuiu o tamanho da tipografia texto quando tela menor 800px*/
+  }    
+  .introducao h1::before {
+    width: 30px; /*ajuste do tamanho do detalhe novo*/
+    height: 10px; /*ajuste do tamanho do detalhe novo*/
+    left: 0px; /*ajuste da posição do detalhe q estava megativo*/
+    
+  }
+  @media (max-width: 420px) {
+  .introducao {
+    grid-template-columns: 1fr; /*após diminuir 400px vai ter apenas uma coluna*/
+    }
+  .introducao img {
+    display: none; /*quando chegar abaixo de 400px a imagem some*/
+
+  }
+}
+
+}

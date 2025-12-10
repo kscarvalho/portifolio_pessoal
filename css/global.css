@@ -1,0 +1,41 @@
+body {
+  font-family: "fari sans", Arial, sans-serif;
+  margin: 0px;
+  color: #141414;
+}
+
+h1, 
+h2, 
+h3, 
+p {
+  margin: 0px;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto; /*NÃO DEIXOU A IMAGEM SER ESMAGADA APOS APLICAÇÃO NO HTML LINHA23*/
+  display: block;
+}
+
+.subtitulo {
+  font-size: 8rem;
+  line-height: 1; /*Altura de linha*/
+  text-transform: uppercase; /*coloca em letra maiúscula*/
+  word-break: break-all; /*Quebra a palavra*/
+  max-width: 4ch; /*quando a tela tiver espaçada, quebra o texto nos primeiros 4 caracteres*/
+}
+
+@media (max-width: 800px) { /*fez o subtitulo ficar menos abaixo de 800px*/
+  .subtitulo {
+    font-size: 3rem;
+    text-transform: capitalize; /*não deixa quebrar o texto*/
+    /*volta o texto para o formato original de h2*/
+    max-width: initial !important; /*o seletor !important não deixa nada q venha depois sobrepor o max-width initial*/
+  }
+}

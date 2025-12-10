@@ -1,0 +1,161 @@
+.formacao {
+  background: #141414;
+  color: #ffff;
+}
+
+.formacao-container {
+  max-width: 1200px;
+  padding: 120px 20px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 100px;
+  position: relative;
+}
+
+.formacao-container::after {
+  content: "";
+  display: block;
+  width: 130px;
+  right: 100px;
+  background: url("../img/detalhe.svg") no-repeat center;
+  position: absolute;
+  bottom: -50px;
+  left: 20px;
+}
+
+.formacao .subtitulo {
+  color: #000000;
+  max-width: 5ch;
+}
+
+.formacao-texto {
+  font-size: 1.5rem; /*tamanho da fonte*/
+  line-height: 1.33; /*altura da linha*/
+  margin-bottom: 60px; /*distancia de um elemento para outro elemento*/
+  max-width: 40ch; /*reduz o tamanho do texto em relação ao lao direito, quebra em 39 caracteres*/
+  color: #a3a3a3;
+}
+
+.formacao-texto strong { /*strong deixa em negrito*/
+  color: #ffffff;
+}
+
+.faculdade-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 60px;
+}
+
+.faculdade {
+  flex: 1; /*não deixa o backgroud ficar do tamanho do texto*/
+  background: #000000;
+  padding: 20px; /*desgruda o texta da caixa*/
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.faculdade-tipo {
+  font-size: .875rem ;
+  text-transform: uppercase; /*OBS estudar esse valor*/
+  color: #a3a3a3;
+  margin-bottom: 10px; /*tive que aplicar display fex e flex direction column em .faculdade para usse valor funcionar*/
+
+}
+
+.faculdade-curso {
+  flex: 1; /*faz com que o item cresça o máximo*/
+  font-size: 1.125rem;
+  line-height: 1.4p;
+  margin-bottom: 40px;
+  position: relative; /*para possibilitar a ciração de um pseudoelemento*/
+}
+
+.faculdade-curso::before {
+  content: "";
+  display: block;
+  width: 4px;
+  height: 20px;
+  background: linear-gradient(#b6f829, #67dd0a);
+  position: absolute;
+  left: -24px;
+}
+
+.faculdade-instituicao {
+  font-size: 1.125rem;
+  color: #a3a3a3;
+}
+
+.cursos {
+  margin-bottom: 60px;
+}
+
+.formacao-extra h3 {
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: #8f8f8f;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+  position: relative; /*para poder possicionar o icone do lado*/
+}
+
+.formacao-extra h3::before {
+  display: block;
+  content: "";
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: -36px;
+  top: -4px;
+}
+
+.cursos h3::before {
+  background: url("../img/cursos.svg") no-repeat center center;
+}
+
+.idiomas h3::before {
+  background: url("../img/idiomas.svg") no-repeat center center;
+}
+
+.formacao-extra li {
+  font-size: 1.125rem;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.formacao-extra span {
+  color: #8f8f8f;
+}
+
+.cursos li {
+  display: flex;
+  justify-content: space-between; /*coloca o elemento colado na direita*/
+}
+
+/*RESPONSIVO*/
+@media (max-width: 800px) {
+  .formacao-container {
+    grid-template-columns: 1fr; /*ao diminuir a tela fica uma coluna apenas*/
+    padding: 60px 20px;
+    gap: 40px;
+  }
+  .formacao .subtitulo {
+    color: #ffffff;
+  }
+  .formacao-texto {
+    font-size: 1.25rem;
+  }
+  .formacao-extra h3::before {
+    position: initial;
+    margin-bottom: 10px;
+  }
+}
+
+
+
+
+
+
