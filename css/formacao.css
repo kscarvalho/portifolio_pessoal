@@ -8,9 +8,10 @@
   padding: 120px 20px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 0.3fr 2fr;
   gap: 100px;
   position: relative;
+  overflow: hidden;
 }
 
 .formacao-container::after {
@@ -25,6 +26,7 @@
 }
 
 .formacao .subtitulo {
+  font-size: 7rem;
   color: #000000;
   max-width: 5ch;
 }
@@ -93,6 +95,20 @@
   margin-bottom: 60px;
 }
 
+.cursos li {
+  width: 100%;
+  white-space: nowrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.formacao-extra{
+  display: flex;
+  /* width: 100vw; */
+  gap: 100px;
+  
+}
+
 .formacao-extra h3 {
   font-size: 0.875rem;
   line-height: 1.4;
@@ -114,6 +130,15 @@
 
 .cursos h3::before {
   background: url("../img/cursos.svg") no-repeat center center;
+}
+
+.idiomas {
+  white-space: nowrap;
+}
+
+.idiomas li{
+  display: flex;
+  gap: 20px;
 }
 
 .idiomas h3::before {
